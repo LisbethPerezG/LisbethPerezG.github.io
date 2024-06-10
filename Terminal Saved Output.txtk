@@ -1,0 +1,32 @@
+Last login: Mon Jun 10 14:27:40 on ttys000
+folder@Lisbeth ~ % cd ~/Projects
+
+folder@Lisbeth Projects % git clone https://github.com/LisbethPerezG/LisbethPerezG.github.io.git
+fatal: destination path 'LisbethPerezG.github.io' already exists and is not an empty directory.
+folder@Lisbeth Projects % cd LisbethPerezG.github.io
+folder@Lisbeth LisbethPerezG.github.io % echo "# My Github Pages Site" > README.md
+folder@Lisbeth LisbethPerezG.github.io % git add README.md
+folder@Lisbeth LisbethPerezG.github.io % git comit -m "Initial commit"
+git: 'comit' is not a git command. See 'git --help'.
+
+The most similar command is
+	commit
+folder@Lisbeth LisbethPerezG.github.io % git commit -m "Initial commit"
+On branch feature/lab1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	README.md.save
+
+nothing added to commit but untracked files present (use "git add" to track)
+folder@Lisbeth LisbethPerezG.github.io % git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/LisbethPerezG/LisbethPerezG.github.io.git'
+folder@Lisbeth LisbethPerezG.github.io % git checkout -b feature/lab1
+fatal: a branch named 'feature/lab1' already exists
+folder@Lisbeth LisbethPerezG.github.io % echo "Hello World!" >> README.md
+
+dquote> git add README.md
+git commit -m "Added Hello World! to README.md"
+
+dquote> git push origin feature/lab1
+dquote> 

@@ -34,6 +34,8 @@ folder@Lisbeth LisbethPerezG.github.io % nano index.html
 <ul>
     <li> Python</li>
     <li> Business</1i>
+</body>
+</html>
 
 
 

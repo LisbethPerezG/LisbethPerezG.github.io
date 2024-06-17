@@ -1,0 +1,24 @@
+Last login: Mon Jun 17 12:45:57 on ttys000
+folder@Lisbeth ~ % cd ~/Projects
+folder@Lisbeth Projects % cd LisbethPerezG.github.io
+folder@Lisbeth LisbethPerezG.github.io % git add index.html
+folder@Lisbeth LisbethPerezG.github.io % git commit -m "Add Portfolio Page"
+[feature/lab2 75ebeb0] Add Portfolio Page
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+folder@Lisbeth LisbethPerezG.github.io % git push origin feature/lab1
+Username for 'https://github.com': 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

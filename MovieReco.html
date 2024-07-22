@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Final Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <style>
+    body {
+        background-color: lightslategrey;
+    }
+    h1{
+        color: rgb(18, 48, 63);
+        font-family:serif;
+    }
+    p{
+        font-family:serif;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <button type="button" class="btn btn-primary nav-link" style="background-color: lightgrey;" onclick="getmoviedata()">TrendingMoviesOfTheDay</button>
+                <a class="nav-link active" aria-current="page" href="Asabovesobelow.html">Personal Movie Reco</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class ="jumbotron text-center">
+        <h1 class="display-4"><b> Movie Reco</b></h1>
+        <p class="lead"><i><b>Movies to see when bored</b></i></p>
+    </div>
+
+    <div id="listofmoviedata" class="row">
+
+    </div>
+    <script>
+        async function getmoviedata() {
+            const url = 'https://api.themoviedb.org/3/trending/movie/day?api_key=b8657b8e5cc0130c9874d6a85262ef7d';
+            const options = {
+                method: 'GET',
+            };
+            const response = await fetch(url, options);
+            const result = await response.json();
+            putmovies(result.results);
+        }
+
+        function putmovies(movies) {
+        const movieContainer = document.getElementById('listofmoviedata');
+
+        movies.forEach(movie => {
+            const container = '<div class="col-2 col-md-2">' +
+            '<div class="movie-container" onclick="Overview">' +
+            '<img src="https://image.tmdb.org/t/p/w500' + movie.poster_path + '" class="img-fluid">' +
+            '<div class="movie-description">' +
+            '<h2>' + movie.title + '</h2>' +
+            '<p>' + movie.overview + '</p>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+            movieContainer.innerHTML += container;
+        });
+    }
+
+</script>
+</body>
+</html>
